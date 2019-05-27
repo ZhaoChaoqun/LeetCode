@@ -1,48 +1,34 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class _506 {
 
 
-    private void sort(int left, int right) {
-        if(left == right)
-            ranks[left] = nums[right];
-        if(left >= right)
-            return;
-        int value = nums[left];
-        int i = left + 1, j = right;
-        while (true) {
-            for(; i <= j && nums[i] <= value; i++);
-            for(; i <= j && nums[j] >= value; j--);
-            if(i >= j)
-                break;
-            exchange(i, j);
-        }
-        exchange(left, j);
-//        System.out.println(Arrays.toString(nums));
-        sort(left, j-1);
-        sort(i, right);
-        // left元素最终位置是j
-        ranks[j] = nums[left];
-    }
-    private void exchange(int i, int j) {
-        int value = nums[i];
-        nums[i] = nums[j];
-        nums[j] = value;
-    }
-    int[] ranks;
-    int[] nums;
+
     public String[] findRelativeRanks(int[] nums) {
-        this.nums = nums;
-        ranks = new int[nums.length];
+        String[] ranks = new String[nums.length];
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(nums.length, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o2[0] - o1[0];
+            }
+        });
+
         for(int i = 0; i < nums.length; i++) {
-            ranks[i] = i;
+            priorityQueue.offer(new int[]{nums[i], i});
         }
-        sort(0, nums.length - 1);
-        System.out.println(Arrays.toString(ranks));
-//        System.out.println(Arrays.toString(nums));
-        return null;
+        if(!priorityQueue.isEmpty())
+            ranks[priorityQueue.poll()[1]] = "Gold Medal";
+        if(!priorityQueue.isEmpty())
+            ranks[priorityQueue.poll()[1]] = "Silver Medal";
+        if(!priorityQueue.isEmpty())
+            ranks[priorityQueue.poll()[1]] = "Bronze Medal";
+        for(int i = 4; !priorityQueue.isEmpty(); i++)
+            ranks[priorityQueue.poll()[1]] = Integer.toString(i);
+        return ranks;
     }
 
     public static void main(String[] args) {
