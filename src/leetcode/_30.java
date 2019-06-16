@@ -1,44 +1,42 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class _30 {
 
-
     public static void main(String[] args) {
         _30 test = new _30();
-        System.out.println(test.findSubstring("barfoothefoobarman", new String[] {"foo","bar"}));
+//        System.out.println(test.findSubstring("barfoothefoobarman", new String[] {"foo","bar"}));
+//        System.out.println(test.findSubstring("wordgoodgoodgoodbestword", new String[] {"word","good","best","word"}));
+        System.out.println(test.findSubstring("aaa", new String[] {"a","b"}));
     }
 
     public List<Integer> findSubstring(String s, String[] words) {
+        if(words.length == 0)
+            return Collections.emptyList();
+        char[] chars = s.toCharArray();
         List<Integer> result = new ArrayList<>();
-        int wordSize = words[0].length();
-        Map<String, Integer> wFreq = new HashMap<>();
-        for(String word : words) {
-            wFreq.put(word, wFreq.getOrDefault(word, 0) + 1);
+        Map<String, Integer> count = new HashMap<>();
+        for(String word : words)
+            count.put(word, count.getOrDefault(word, 0) + 1);
+        int wordLength = words[0].length();
+        int length = wordLength * words.length;
+        for(int i = 0; i <= chars.length - length; i++) {
+            compare(i, i + length - 1, count, wordLength, chars, result);
         }
-        int formed = 0, required = wFreq.size();
-        Map<String, Integer> sFreq = new HashMap<>();
-        String word;
-        for(int l = 0, r = 0; r < s.length() - wordSize; r++) {
-            word = s.substring(r, r + wordSize);
-            if(wFreq.containsKey(word)) {
-                if(sFreq.getOrDefault(word, 0) + 1 == wFreq.getOrDefault(word, 0)) {
-                    formed++;
-                }
-                sFreq.put(word, sFreq.getOrDefault(word, 0) + 1);
-                if(formed == required) {
+        return result;
+    }
 
-                }
-                r += wordSize - 1;
-            } else {
-                l = r + 1;
-            }
+    private void compare(int from, int end, Map<String, Integer> count, int wordLength, char[] chars, List<Integer> result) {
+        Map<String, Integer> seen = new HashMap<>();
+        for(int i = from; i <= end; i += wordLength) {
+            String word = new String(chars, i, wordLength);
+            if(!count.containsKey(word))
+                return;
+            seen.put(word, seen.getOrDefault(word, 0) + 1);
+            if(seen.get(word) > count.get(word))
+                return;
         }
-        if(formed < required) return result;
-        return null;
+        result.add(from);
     }
 }

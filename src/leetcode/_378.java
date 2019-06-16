@@ -35,7 +35,7 @@ public class _378 {
                 }
             }
         Collections.sort(list);
-//        System.out.println(list);
+//        System.out.println(sortedIndex);
         return list.get(k - count - 1);
     }
 }

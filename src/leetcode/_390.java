@@ -7,21 +7,14 @@ public class _390 {
 
 
     public static void main(String[] args) {
-
+        _390 test = new _390();
+        for(int i = 0; i <= 8; i++)
+            System.out.println(i + " " + test.lastRemaining(i));
     }
     public int lastRemaining(int n) {
-        Set<Integer> set = new HashSet<>();
-        for (int i = 1; i <= n; i++)
-            set.add(i);
-        int step = 2;
-        while (set.size() != 1) {
-            for (int i = 1; i <= n; i += step)
-                set.remove(i);
-        }
-        while (set.size() != 1) {
-            for (int i = 1; i <= n; i += step)
-                set.remove(i);
-        }
-        return 0;
+        int fromLeft = 1, head = 1;
+        for(int step = 1; n > 1; step <<= 1, n >>= 1, fromLeft ^= 1)
+            if(fromLeft == 1 || n % 2 == 1) head += step;
+        return head;
     }
 }

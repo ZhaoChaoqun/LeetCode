@@ -10,7 +10,7 @@ public class _382 {
     }
     Random random;
     ListNode head;
-    /*@param head The linked list's head.
+    /*@param head The linked sortedIndex's head.
         Note that the head is guaranteed to be not null, so it contains at least one node. */
     public _382(ListNode head) {
         random = new Random();

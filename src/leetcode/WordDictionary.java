@@ -30,21 +30,21 @@ public class WordDictionary {
 //        Node node = null;
 //        int i = 0, current = 0;
 //        for(; current < array.length;) {
-//            for(; current < array.length && i < list.size(); i++) {
-//                node = list.get(i);
+//            for(; current < array.length && i < sortedIndex.size(); i++) {
+//                node = sortedIndex.get(i);
 //                if(node.value == array[current]) {
 //                    ++current;
 //                    if(current == array.length) {
 //                        node.isLeaf = true;
 //                        return;
 //                    }
-//                    list = node.children;
+//                    sortedIndex = node.children;
 //                    i = -1;
 //                }
 //            }
 //            if(current < array.length) {
 //                node = new Node(array[current++]);
-//                list.add(node);
+//                sortedIndex.add(node);
 //                if(current == array.length) {
 //                    node.isLeaf = true;
 //                    return;
@@ -68,13 +68,13 @@ public class WordDictionary {
 //        return search(word.toCharArray(), root.children, 0);
 //    }
 //
-//    private boolean search(char[] array, List<Node> list, int current) {
+//    private boolean search(char[] array, List<Node> sortedIndex, int current) {
 //        Node node = null;
 //        int i = 0;
 //        for(; current < array.length;) {
-//            for(; current < array.length && i < list.size(); i++) {
+//            for(; current < array.length && i < sortedIndex.size(); i++) {
 //                if(array[current] == '.') {
-//                    for(Node item : list) {
+//                    for(Node item : sortedIndex) {
 //                        if((current + 1 == array.length && item.isLeaf)
 //                                || (!item.children.isEmpty() && search(array, item.children, current + 1))) {
 //                            return true;
@@ -82,13 +82,13 @@ public class WordDictionary {
 //                    }
 //                    return false;
 //                } else {
-//                    node = list.get(i);
+//                    node = sortedIndex.get(i);
 //                    if(node.value == array[current]) {
 //                        ++current;
 //                        if(current == array.length && node.isLeaf) {
 //                            return true;
 //                        }
-//                        list = node.children;
+//                        sortedIndex = node.children;
 //                        i = -1;
 //                    }
 //                }

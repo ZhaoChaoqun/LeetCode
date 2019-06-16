@@ -9,52 +9,82 @@ import java.util.Stack;
 public class _301 {
 
 
-    private void backtracking(List<List<String>> matrix, int index, int start, StringBuilder sb) {
-        if(index == matrix.size())
-            result.add(sb.toString());
-        else {
-            for(String row : matrix.get(index)) {
-                sb.append(row);
-                backtracking(matrix, index + 1, start + row.length(), sb);
-                sb.delete(start, start + row.length());
-            }
-        }
-    }
-    List<String> result = new ArrayList<>();
-    public List<String> removeInvalidParentheses(String s) {
-        char[] c = s.toCharArray();
-        int left = 0;
-        List<List<String>> matrix = new ArrayList<>();
-        int fromIndex = 0;
-        for(int i = 0; i < c.length; i++) {
-            if(c[i] == '(') {
-                left++;
-            } else if(c[i] == ')') {
-                if(--left < 0) {
-                    List<String> row = new ArrayList<>();
-                    for(int index = s.indexOf(')', fromIndex); index != i;) {
-                        if(index == i - 1)
-                            break;
-                        row.add(new StringBuilder().append(c, fromIndex, index - fromIndex).append(c, index + 1, i - index).toString());
-                        index = s.indexOf(')', index + 1);
-                    }
-                    row.add(new StringBuilder().append(c, fromIndex, i - fromIndex).toString());
-                    matrix.add(row);
-                    fromIndex = i + 1;
-                    left = 0;
-                }
-            }
-        }
-        if(left > 0) {
 
+    List<String> result = new ArrayList<>();
+    int right;
+    String s;
+    List<Integer> leftIndex = new ArrayList<>(), rightIndex = new ArrayList<>();
+    private void recursive(char[] c, int i, int begin, int left) {
+        if(i == c.length) {
+            if(left > right) {
+                if(result.isEmpty()) {
+                    for(int j : leftIndex) {
+                        result.add(s.substring(begin, j) + s.substring(j + 1));
+                    }
+                } else {
+                    List<String> newResult = new ArrayList<>();
+                    for(String item : result) {
+                        for(int j : leftIndex) {
+                            newResult.add(item + s.substring(begin, j) + s.substring(j + 1));
+                        }
+                    }
+                    result = newResult;
+                }
+            } else if(left == right) {
+                if(result.isEmpty())
+                    result.add("");
+                else {
+                    for (int j = 0; j < result.size(); j++) {
+                        result.set(j, result.get(j) + s.substring(begin));
+                    }
+                }
+                return;
+            }
+            return;
         }
-        if(fromIndex < c.length) {
-            List<String> row = new ArrayList<>();
-            row.add(s.substring(fromIndex, c.length));
-            matrix.add(row);
+
+        if(c[i] == ('(')) {
+            left++;
+            if(!leftIndex.isEmpty() && leftIndex.get(leftIndex.size() - 1) == i - 1) {
+                leftIndex.set(leftIndex.size() - 1, i);
+            } else {
+                leftIndex.add(i);
+            }
+        } else if(c[i] == (')')) {
+            right++;
+            if(!rightIndex.isEmpty() && rightIndex.get(rightIndex.size() - 1) == i - 1) {
+                rightIndex.set(rightIndex.size() - 1, i);
+            } else {
+                rightIndex.add(i);
+            }
+            if(right > left) {
+                left = 0;
+                right = 0;
+                if(result.isEmpty()) {
+                    for(int j : rightIndex) {
+                        result.add(s.substring(begin, j) + s.substring(j + 1, i + 1));
+                    }
+                } else {
+                    List<String> newResult = new ArrayList<>();
+                    for(String item : result) {
+                        for(int j : rightIndex) {
+                            newResult.add(item + s.substring(begin, j) + s.substring(j + 1, i + 1));
+                        }
+                    }
+                    result = newResult;
+                }
+                leftIndex = new ArrayList<>();
+                rightIndex = new ArrayList<>();
+                begin = i + 1;
+            }
         }
-        StringBuilder sb = new StringBuilder();
-        backtracking(matrix, 0, 0, sb);
+        recursive(c, i + 1, begin, left);
+
+    }
+    public List<String> removeInvalidParentheses(String s) {
+        this.s = s;
+        char[] c = s.toCharArray();
+        recursive(c, 0, 0, 0);
         return result;
     }
 
@@ -62,5 +92,7 @@ public class _301 {
         System.out.println(new _301().removeInvalidParentheses("()())()"));
         System.out.println(new _301().removeInvalidParentheses("(a)())()"));
         System.out.println(new _301().removeInvalidParentheses(")("));
+        System.out.println(new _301().removeInvalidParentheses(""));
+        System.out.println(new _301().removeInvalidParentheses("(("));
     }
 }
