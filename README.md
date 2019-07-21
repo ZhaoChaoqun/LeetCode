@@ -41,10 +41,6 @@
 ### 滑动窗口（SlidingWindow）
 - [3. Longest Substring Without Repeating Characters(Medium)](./problems/sliding-window/3.%20Longest%20Substring%20Without%20Repeating%20Characters(Medium).md)
 - [76. Minimum Window Substring(Hard)](./problems/sliding-window/76.%20Minimum%20Window%20Substring(Hard).md)
-- [22. Generate Parentheses(Medium)](./problems/backtracking/22.%20Generate Parentheses(Medium).md)
-- [51. N-Queens(Hard)](./problems/backtracking/51.%20N-Queens(Hard).md)
-- [52. N-Queens II(Hard)](./problems/backtracking/52.%20N-Queens II(Hard).md)
-- [60. Permutation Sequence(Medium)](./problems/backtracking/60.%20Permutation Sequence(Medium).md)
 ### 字典树（Trie）
 ### 递归（Recursion）
 ### OrderedMap（OrderedMap）
