@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class _84 {
 
     public int largestRectangleArea(int[] heights) {

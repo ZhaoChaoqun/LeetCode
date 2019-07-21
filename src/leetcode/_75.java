@@ -5,16 +5,17 @@ import java.util.Arrays;
 public class _75 {
 
     public void sortColors(int[] nums) {
-        int second = nums.length - 1, zero = 0;
-        for (int i = 0; i <= second; i++) {
-            while (nums[i] == 2 && i < second) swap(nums, i, second--);
-            while (nums[i] == 0 && i > zero) swap(nums, i, zero++);
+        int zero = 0, one = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == 0) {
+                nums[i] = 2;
+                nums[zero + one] = 1;
+                nums[zero++] = 0;
+            } else if(nums[i] == 1) {
+                nums[i] = 2;
+                nums[zero + one++] = 1;
+            }
         }
-    }
-    private void swap(int[] array, int i, int j) {
-        int tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
     }
 
     public static void main(String[] args) {

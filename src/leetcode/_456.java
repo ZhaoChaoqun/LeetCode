@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+package leetcode;
+
 import java.util.LinkedList;
-import java.util.List;
 
 public class _456 {
 

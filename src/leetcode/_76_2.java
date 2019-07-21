@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.LinkedList;
-
 public class _76_2 {
 
     public static void main(String[] args) {

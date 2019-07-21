@@ -46,8 +46,8 @@ public class _436 {
 
     public static void main(String[] args) {
         _436 test = new _436();
-//        System.out.println(Arrays.toString(test.findRightInterval(new int[][] {{1,2}})));
+        System.out.println(Arrays.toString(test.findRightInterval(new int[][] {{1,2}})));
         System.out.println(Arrays.toString(test.findRightInterval(new int[][] {{3,4}, {2,3}, {1,2}})));
-//        System.out.println(Arrays.toString(test.findRightInterval(new int[][] {{1,4}, {2,3}, {3,4}})));
+        System.out.println(Arrays.toString(test.findRightInterval(new int[][] {{1,4}, {2,3}, {3,4}})));
     }
 }

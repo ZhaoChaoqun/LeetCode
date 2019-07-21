@@ -1,4 +1,6 @@
-public class _236 {
+package leetcode;
+
+public class _236_3 {
     static class TreeNode {
         int val;
         TreeNode left;

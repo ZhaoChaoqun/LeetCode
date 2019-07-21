@@ -5,18 +5,22 @@ import java.util.Map;
 
 public class _3_2 {
     public int lengthOfLongestSubstring(String s) {
-        if("".equals(s) || s == null) return 0;
-        Map<Character, Integer> map = new HashMap<>();
-        char[] c = s.toCharArray();
-        int max = 0, from = 0;
-        for (int i = 0; i < c.length; i++) {
-            if (map.containsKey(c[i])) {
-                max = Math.max(max, i - from);
-                from = Math.max(from, map.get(c[i]) + 1);
+        char[] array = s.toCharArray();
+        int[] map = new int[128];
+        for(int i = 0; i < 128; i++)
+            map[i] = -1;
+        int max = 0;
+        int i = 0, left = 0, temp = 0;
+        for(; i < array.length; i++) {
+            if(map[array[i]] != -1) {
+                temp = i - left;
+                max = max > temp ? max : temp;
+                temp = map[array[i]] + 1;
+                left = temp > left ? temp : left;
             }
-            map.put(c[i], i);
+            map[array[i]] = i;
         }
-        return Math.max(max, c.length - from);
+        return max >= i - left ? max : i - left;
     }
 
     public static void main(String[] args) {

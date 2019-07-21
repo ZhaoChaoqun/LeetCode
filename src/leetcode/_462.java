@@ -1,3 +1,5 @@
+package leetcode;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -5,7 +7,7 @@ import java.util.Map;
 public class _462 {
 
     public static void main(String[] args) {
-//        System.out.println(new _462().minMoves2(new int[]{1,2,3}));
+//        System.out.println(new leetcode._462().minMoves2(new int[]{1,2,3}));
         System.out.println(new _462().minMoves2(new int[]{203125577,-349566234,230332704,48321315,66379082,386516853,50986744,-250908656,-425653504,-212123143}));
 //        []
     }

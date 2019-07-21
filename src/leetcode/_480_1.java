@@ -7,7 +7,7 @@ import java.util.List;
 
 public class _480_1 {
     private int binarySearch(List<Integer> list, int left, int right, int target) {
-        if(left > right)
+        if(left >= right)
             return left;
         int mid = (left + right) >>> 1;
         if((mid == left || list.get(mid - 1) <= target) && list.get(mid) >= target) {
