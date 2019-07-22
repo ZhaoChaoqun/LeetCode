@@ -3,17 +3,17 @@
 ![leetcode.jpeg](./static-file/leetcode.png)
 ### 数组（Array）
 ### 动态规划（DynamicProgramming）
-- [5. Longest Palindromic Substring(Medium)](./problems/dynamic-programming/5.%20Longest Palindromic Substring(Medium).md)
-- [32. Longest Valid Parentheses(Hard)](./problems/dynamic-programming/32.%20Longest Valid Parentheses(Hard).md)
-- [53. Maximum Subarray(Easy)](./problems/dynamic-programming/53.%20Maximum Subarray(Easy).md)
-- [62. Unique Paths(Medium)](./problems/dynamic-programming/62.%20Unique Paths(Medium).md)
-- [63. Unique Paths II(Medium)](./problems/dynamic-programming/63.%20Unique Paths II(Medium).md)
-- [64. Minimum Path Sum(Medium)](./problems/dynamic-programming/64.%20Minimum Path Sum(Medium).md)
-- [70. Climbing Stairs(Easy)](./problems/dynamic-programming/70.%20Climbing Stairs(Easy).md)
-- [72. Edit Distance(Hard)](./problems/dynamic-programming/72.%20Edit Distance(Hard).md)
-- [85. Maximal Rectangle(Hard)](./problems/dynamic-programming/85.%20Maximal Rectangle(Hard).md)
-- [87. Scramble String(Hard)](./problems/dynamic-programming/87.%20Scramble String(Hard).md)
-- [91. Decode Ways(Medium)](./problems/dynamic-programming/91.%20Decode Ways(Medium).md)
+- [5. Longest Palindromic Substring(Medium)](./problems/dynamic-programming/5.%20Longest%20Palindromic%20Substring(Medium).md)
+- [32. Longest Valid Parentheses(Hard)](./problems/dynamic-programming/32.%20Longest%20Valid%20Parentheses(Hard).md)
+- [53. Maximum Subarray(Easy)](./problems/dynamic-programming/53.%20Maximum%20Subarray(Easy).md)
+- [62. Unique Paths(Medium)](./problems/dynamic-programming/62.%20Unique%20Paths(Medium).md)
+- [63. Unique Paths II(Medium)](./problems/dynamic-programming/63.%20Unique%20Paths%20II(Medium).md)
+- [64. Minimum Path Sum(Medium)](./problems/dynamic-programming/64.%20Minimum%20Path%20Sum(Medium).md)
+- [70. Climbing Stairs(Easy)](./problems/dynamic-programming/70.%20Climbing%20Stairs(Easy).md)
+- [72. Edit Distance(Hard)](./problems/dynamic-programming/72.%20Edit%20Distance(Hard).md)
+- [85. Maximal Rectangle(Hard)](./problems/dynamic-programming/85.%20Maximal%20Rectangle(Hard).md)
+- [87. Scramble String(Hard)](./problems/dynamic-programming/87.%20Scramble%20String(Hard).md)
+- [91. Decode Ways(Medium)](./problems/dynamic-programming/91.%20Decode%20Ways(Medium).md)
 ### 数学（Math）
 ### 字符串（String）
 ### 树（Tree）

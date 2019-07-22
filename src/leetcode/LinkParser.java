@@ -22,7 +22,7 @@ public class LinkParser {
                 });
                 for(File problem : problems) {
                     String fileName = problem.getName();
-                    System.out.println("- [" + fileName.replace(".md", "") + "](" + category + "/" + fileName.replaceFirst(" ", "%20") + ")");
+                    System.out.println("- [" + fileName.replace(".md", "") + "](" + category + "/" + fileName.replaceAll(" ", "%20") + ")");
                 }
             }
         }
