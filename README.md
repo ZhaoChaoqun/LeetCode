@@ -31,7 +31,12 @@
 ### 广度优先搜索（Breadth-firstSearch）
 ### 栈（Stack）
 ### 回溯算法（Backtracking）
+- [17. Letter Combinations of a Phone Number(Medium)](./problems/backtracking/17.%20Letter%20Combinations%20of%20a%20Phone%20Number(Medium).md)
 - [22. Generate Parentheses(Medium)](./problems/backtracking/22.%20Generate%20Parentheses(Medium).md)
+- [37. Sudoku Solver(Hard)](./problems/backtracking/37.%20Sudoku%20Solver(Hard).md)
+- [39. Combination Sum(Medium)](./problems/backtracking/39.%20Combination%20Sum(Medium).md)
+- [40. Combination Sum II(Medium)](./problems/backtracking/40.%20Combination%20Sum%20II(Medium).md)
+- [46. Permutations(Medium)](./problems/backtracking/46.%20Permutations(Medium).md)
 - [51. N-Queens(Hard)](./problems/backtracking/51.%20N-Queens(Hard).md)
 - [52. N-Queens II(Hard)](./problems/backtracking/52.%20N-Queens%20II(Hard).md)
 - [60. Permutation Sequence(Medium)](./problems/backtracking/60.%20Permutation%20Sequence(Medium).md)
