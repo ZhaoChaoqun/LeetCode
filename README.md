@@ -16,11 +16,17 @@
 - [91. Decode Ways(Medium)](./problems/dynamic-programming/91.%20Decode%20Ways(Medium).md)
 ### 数学（Math）
 ### 字符串（String）
+- [821. Shortest Distance to a Character(Easy)](./problems/string/821.%20Shortest%20Distance%20to%20a%20Character(Easy).md)
+- [824. Goat Latin(Easy)](./problems/string/824.%20Goat%20Latin(Easy).md)
 ### 树（Tree）
 ### 哈希表（HashTable）
 - [30. Substring with Concatenation of All Words(Hard)](./problems/hash-table/30.%20Substring%20with%20Concatenation%20of%20All%20Words(Hard).md)
 - [36. Valid Sudoku(Medium)](./problems/hash-table/36.%20Valid%20Sudoku(Medium).md)
 ### 深度优先搜索（Depth-firstSearch）
+- [98. Validate Binary Search Tree(Medium)](./problems/depth-first-search/98.%20Validate%20Binary%20Search%20Tree(Medium).md)
+- [99. Recover Binary Search Tree(Hard)](./problems/depth-first-search/99.%20Recover%20Binary%20Search%20Tree(Hard).md)
+- [130. Surrounded Regions(Medium)](./problems/depth-first-search/130.%20Surrounded%20Regions(Medium).md)
+- [394. Decode String(Medium)](./problems/depth-first-search/394.%20Decode%20String(Medium).md)
 ### 二分查找（BinarySearch）
 - [4. Median of Two Sorted Arrays(Hard)](./problems/binary-search/4.%20Median%20of%20Two%20Sorted%20Arrays(Hard).md)
 - [37. Sudoku Solver(Hard)](./problems/binary-search/37.%20Sudoku%20Solver(Hard).md)
