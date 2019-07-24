@@ -14,6 +14,16 @@
 - [85. Maximal Rectangle(Hard)](./problems/dynamic-programming/85.%20Maximal%20Rectangle(Hard).md)
 - [87. Scramble String(Hard)](./problems/dynamic-programming/87.%20Scramble%20String(Hard).md)
 - [91. Decode Ways(Medium)](./problems/dynamic-programming/91.%20Decode%20Ways(Medium).md)
+- [120. Triangle(Medium)](./problems/dynamic-programming/120.%20Triangle(Medium).md)
+- [121. Best Time to Buy and Sell Stock(Easy)](./problems/dynamic-programming/121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock(Easy).md)
+- [123. Best Time to Buy and Sell Stock III(Hard)](./problems/dynamic-programming/123.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20III(Hard).md)
+- [132. Palindrome Partitioning II(Hard)](./problems/dynamic-programming/132.%20Palindrome%20Partitioning%20II(Hard).md)
+- [139. Word Break(Medium)](./problems/dynamic-programming/139.%20Word%20Break(Medium).md)
+- [140. Word Break II(Hard)](./problems/dynamic-programming/140.%20Word%20Break%20II(Hard).md)
+- [152. Maximum Product Subarray(Medium)](./problems/dynamic-programming/152.%20Maximum%20Product%20Subarray(Medium).md)
+- [198. House Robber(Easy)](./problems/dynamic-programming/198.%20House%20Robber(Easy).md)
+- [221. Maximal Square(Medium)](./problems/dynamic-programming/221.%20Maximal%20Square(Medium).md)
+- [264. Ugly Number II(Medium)](./problems/dynamic-programming/264.%20Ugly%20Number%20II(Medium).md)
 ### 数学（Math）
 ### 字符串（String）
 - [821. Shortest Distance to a Character(Easy)](./problems/string/821.%20Shortest%20Distance%20to%20a%20Character(Easy).md)
