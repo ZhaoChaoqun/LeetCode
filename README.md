@@ -2,6 +2,7 @@
 
 ![leetcode.jpeg](./static-file/leetcode.png)
 ### 数组（Array）
+- [1. Two Sum(Easy)](./problems/array/1.%20Two%20Sum(Easy).md)
 ### 动态规划（DynamicProgramming）
 - [5. Longest Palindromic Substring(Medium)](./problems/dynamic-programming/5.%20Longest%20Palindromic%20Substring(Medium).md)
 - [32. Longest Valid Parentheses(Hard)](./problems/dynamic-programming/32.%20Longest%20Valid%20Parentheses(Hard).md)
@@ -26,7 +27,14 @@
 - [221. Maximal Square(Medium)](./problems/dynamic-programming/221.%20Maximal%20Square(Medium).md)
 - [264. Ugly Number II(Medium)](./problems/dynamic-programming/264.%20Ugly%20Number%20II(Medium).md)
 ### 数学（Math）
+- [7. Reverse Integer(Easy)](./problems/math/7.%20Reverse%20Integer(Easy).md)
+- [9. Palindrome Number(Easy)](./problems/math/9.%20Palindrome%20Number(Easy).md)
 ### 字符串（String）
+- [6. ZigZag Conversion(Medium)](./problems/string/6.%20ZigZag%20Conversion(Medium).md)
+- [8. String to Integer (atoi)(Medium)](./problems/string/8.%20String%20to%20Integer%20(atoi)(Medium).md)
+- [12. Integer to Roman(Medium)](./problems/string/12.%20Integer%20to%20Roman(Medium).md)
+- [13. Roman to Integer(Easy)](./problems/string/13.%20Roman%20to%20Integer(Easy).md)
+- [14. Longest Common Prefix(Medium)](./problems/string/14.%20Longest%20Common%20Prefix(Medium).md)
 - [821. Shortest Distance to a Character(Easy)](./problems/string/821.%20Shortest%20Distance%20to%20a%20Character(Easy).md)
 - [824. Goat Latin(Easy)](./problems/string/824.%20Goat%20Latin(Easy).md)
 ### 树（Tree）
@@ -44,6 +52,7 @@
 ### 贪心算法（Greedy）
 - [55. Jump Game(Medium)](./problems/greedy/55.%20Jump%20Game(Medium).md)
 ### 双指针（TwoPointers）
+- [11. Container With Most Water(Medium)](./problems/two-pointers/11.%20Container%20With%20Most%20Water(Medium).md)
 - [75. Sort Colors(Medium)](./problems/two-pointers/75.%20Sort%20Colors(Medium).md)
 ### 广度优先搜索（Breadth-firstSearch）
 ### 栈（Stack）
@@ -59,6 +68,8 @@
 - [60. Permutation Sequence(Medium)](./problems/backtracking/60.%20Permutation%20Sequence(Medium).md)
 ### 设计（Design）
 ### 链表（LinkedList）
+- [2. Add Two Numbers(Medium)](./problems/linked-list/2.%20Add%20Two%20Numbers(Medium).md)
+- [19. Remove Nth Node From End of List(Medium)](./problems/linked-list/19.%20Remove%20Nth%20Node%20From%20End%20of%20List(Medium).md)
 ### 堆（Heap）
 ### 排序（Sort）
 ### 位运算（BitManipulation）
