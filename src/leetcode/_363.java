@@ -4,43 +4,63 @@ import java.util.Arrays;
 
 public class _363 {
     public int maxSumSubmatrix(int[][] matrix, int k) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        int[][] sum = new int[m][n];
-        sum[0][0] = matrix[0][0];
-        for(int i = 1; i < n; i++) {
-            sum[0][i] = sum[0][i-1] + matrix[0][i];
-        }
-        for(int i = 1; i < m; i++) {
-            sum[i][0] = sum[i-1][0] + matrix[i][0];
-        }
-        for(int i = 1; i < m; i++) {
-            for(int j = 1; j < n; j++) {
-                sum[i][j] = sum[i-1][j] + sum[i][j-1] - sum[i-1][j-1] + matrix[i][j];
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int max = Integer.MIN_VALUE;
+        // 单个
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                if (matrix[i][j] <= k) {
+                    max = Integer.max(max, matrix[i][j]);
+                }
             }
         }
-        for(int[] row : matrix)
-            System.out.println(Arrays.toString(row));
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                if(sum[i][j] == k)
-                    return k;
-                if(sum[i][j] < k)
-                    max = Math.max(max, sum[i][j]);
-                for(int p = 0; p < j; p++) {
-                    if(sum[i][j] - sum[i][p] == k)
-                        return k;
-                    if(sum[i][j] - sum[i][p] < k)
-                        max = Math.max(max, sum[i][j] - sum[i][p]);
+        // 单行
+        for (int i = 1; i < rows; ++i) {
+            matrix[i][0] += matrix[i-1][0];
+            if (matrix[i][0] <= k) {
+                max = Integer.max(max, matrix[i][0]);
+            }
+        }
+        // 单列
+        for (int j = 1; j < cols; ++j) {
+            matrix[0][j] += matrix[0][j-1];
+            if (matrix[0][j] <= k) {
+                max = Integer.max(max, matrix[0][j]);
+            }
+        }
 
+        // 从左上角到[i,j]的整块矩阵
+        for (int i = 1; i < rows; ++i) {
+            for (int j = 1; j < cols; ++j) {
+                matrix[i][j] += matrix[i-1][j] + matrix[i][j-1] - matrix[i-1][j-1];
+                if (matrix[i][j] <= k) {
+                    max = Integer.max(max, matrix[i][j]);
                 }
-                for(int q = 0; q < i; q++) {
-                    if(sum[i][j] - sum[q][j] == k)
-                        return k;
-                    if(sum[i][j] - sum[q][j] < k)
-                        max = Math.max(max, sum[i][j] - sum[q][j]);
+            }
+        }
 
+        for (int i = 1; i < rows; ++i) {
+            for (int j = 1; j < cols; ++j) {
+                for (int m = 0; m < i; ++m) {
+                    for (int n = 0; n < j; ++n) {
+                        int value = matrix[i][j] - matrix[m][j] - matrix[i][n] + matrix[m][n];
+                        if (value <= k) {
+                            max = Integer.max(max, value);
+                        }
+                    }
+                }
+                for (int n = 0; n < j; ++n) {
+                    int value = matrix[i][j] - matrix[i][n];
+                    if (value <= k) {
+                        max = Integer.max(max, value);
+                    }
+                }
+                for (int m = 0; m < i; ++m) {
+                    int value = matrix[i][j] - matrix[m][j];
+                    if (value <= k) {
+                        max = Integer.max(max, value);
+                    }
                 }
             }
         }
