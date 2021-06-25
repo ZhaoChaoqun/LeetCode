@@ -62,13 +62,13 @@ public class _417 {
         }
     }
 
-    public List<int[]> pacificAtlantic(int[][] matrix) {
-        int m = matrix.length;
+    public List<int[]> pacificAtlantic(int[][] heights) {
+        int m = heights.length;
         if (m == 0) return result;
-        int n = matrix[0].length;
+        int n = heights[0].length;
         int[][] used = new int[m][n];
-        backtracking(0, n - 1, m, n, matrix, used);
-        backtracking(m - 1, 0, m, n, matrix, used);
+        backtracking(0, n - 1, m, n, heights, used);
+        backtracking(m - 1, 0, m, n, heights, used);
         return result;
     }
 }

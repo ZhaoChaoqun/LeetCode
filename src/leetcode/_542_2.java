@@ -2,69 +2,61 @@ package leetcode;
 
 import java.util.*;
 
-public class _542 {
-
+public class _542_2 {
 
     int M;
     int N;
     int[][] mat;
-    int[][] visit;
     int[][] directions = new int[][] {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public int[][] updateMatrix(int[][] mat) {
         M = mat.length;
         N = mat[0].length;
         this.mat = mat;
-        visit = new int[M][N];
-        for (int i = 0; i < M; ++i) {
-            visit[i] = new int[N];
-        }
-        Set<Integer> availableSet = new HashSet<>();
+        List<int[]> availableSet = new ArrayList<>();
         for (int i = 0; i < M; ++i) {
             for (int j = 0; j < N; ++j) {
                 if (mat[i][j] == 0) {
-                    availableSet.add(i * N + j);
+                    availableSet.add(new int[] {i, j});
                 }
             }
         }
-        bfs(1, availableSet);
-//        for (int i = 0; i < visit.length; ++i) {
-//            System.out.println(i + ": " + Arrays.toString(visit[i]));
-//        }
-//        System.out.println();
+        bfs(-1, availableSet);
+        for (int i = 0; i < M; ++i) {
+            for (int j = 0; j < N; ++j) {
+                mat[i][j] = -mat[i][j];
+            }
+        }
         return mat;
     }
 
     private boolean available(int i, int j) {
-        if (i < 0 || j < 0 || i == M || j == N || mat[i][j] == 0 || visit[i][j] == 1) {
+        if (i < 0 || j < 0 || i == M || j == N || mat[i][j] <= 0) {
             return false;
         }
         return true;
     }
 
     // 从0往开扩散
-    private void bfs(int path, Set<Integer> availableSet) {
+    private void bfs(int path, List<int[]> availableSet) {
         if (availableSet.isEmpty()) {
             return;
         }
-        Set<Integer> newAvailableSet = new HashSet<>();
-        for (Integer position : availableSet) {
-            int i = position / N;
-            int j = position % N;
+        List<int[]> newAvailableSet = new ArrayList<>();
+        for (int[] position : availableSet) {
             for (int index = 0; index < 4; ++index) {
-                int newI = i + directions[index][0], newJ = j + directions[index][1];
+                int newI = position[0] + directions[index][0], newJ = position[1] + directions[index][1];
                 if (available(newI, newJ)) {
-                    visit[newI][newJ] = 1;
                     mat[newI][newJ] = path;
-                    newAvailableSet.add(newI * N + newJ);
+                    newAvailableSet.add(new int[] {newI, newJ});
                 }
             }
         }
-        bfs(path + 1, newAvailableSet);
+        bfs(path - 1, newAvailableSet);
     }
 
     public static void main(String[] args) {
-        _542 test = new _542();
+        _542_2 test = new _542_2();
         int[][] matrix = test.updateMatrix(new int[][] {{1,0,1,1,0,0,1,0,0,1},
                 {0,1,1,0,1,0,1,0,1,1},
                 {0,0,1,0,1,0,0,1,0,0},

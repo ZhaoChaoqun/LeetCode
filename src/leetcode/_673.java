@@ -14,7 +14,6 @@ public class _673 {
         int[][] array = new int[nums.length][2];
         array[0] = new int[]{1,1};
         for(int i = 1; i < nums.length; i++) {
-            array[i] = new int[2];
             int max = 0;
             for(int j = 0; j < i; j++) {
                 if(nums[i] > nums[j])
